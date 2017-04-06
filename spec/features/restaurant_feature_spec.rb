@@ -19,6 +19,11 @@ feature 'restaurants' do
         expect(page).not_to have_link 'Add a restaurant'
       end
     end
+
+    scenario 'user cannot visit restaurant/new' do
+      visit '/restaurants/new'
+      expect(page).to have_content 'You need to sign in or sign up before continuing.'
+    end
   end
 
   context 'restaurants have been added' do
