@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 #Devise
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+#omniauth-facebook
+gem 'omniauth-facebook'
+
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
