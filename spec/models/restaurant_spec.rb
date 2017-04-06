@@ -13,4 +13,14 @@ describe Restaurant, type: :model do
     expect(restaurant).to have(1).error_on(:name)
   end
 
+  it "belongs to a user" do
+    restaurant = Restaurant.create(name: "Joe's Tavern")
+    expect(restaurant).to belong_to :user
+  end
+
+  it "has many reviews" do
+    restaurant = Restaurant.create(name: "Joe's Tavern")
+    expect(restaurant).to have_many :reviews
+  end
+
 end

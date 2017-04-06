@@ -5,4 +5,9 @@ describe Review, type: :model do
     review = Review.new(rating: 10)
     expect(review).to have(1).error_on(:rating)
   end
+
+  it "belongs to a user" do
+    review = Review.new(rating: 5)
+    expect(review).to belong_to :user
+  end
 end
