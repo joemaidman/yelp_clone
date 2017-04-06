@@ -87,28 +87,28 @@ feature 'restaurants' do
     end
   end
 
-  # context 'deleting restaurants' do
-  #
-  #   before {
-  #     sign_up
-  #     create_restaurant
-  #   }
-  #
-  #   scenario 'removes a restaurant when a user clicks a delete link' do
-  #     click_link 'Delete KFC'
-  #     expect(page).not_to have_content 'KFC'
-  #     expect(page).to have_content 'Restaurant deleted successfully'
-  #   end
-  #
-  #   scenario 'does not remove a restaurant when another user clicks delete' do
-  #     sign_out
-  #     sign_up(email: "test2@example.com", password: "password")
-  #     click_link 'Delete KFC'
-  #     expect(page).to have_content 'KFC'
-  #     expect(page).not_to have_content 'Restaurant deleted successfully'
-  #   end
-  #
-  # end
+  context 'deleting restaurants' do
+
+    before {
+      sign_up
+      create_restaurant
+    }
+
+    scenario 'removes a restaurant when a user clicks a delete link' do
+      click_link 'Delete KFC'
+      expect(page).not_to have_content 'KFC'
+      expect(page).to have_content 'Restaurant deleted successfully'
+    end
+
+    scenario 'does not remove a restaurant when another user clicks delete' do
+      sign_out
+      sign_up(email: "test2@example.com", password: "password")
+      click_link 'Delete KFC'
+      expect(page).to have_content 'KFC'
+      expect(page).not_to have_content 'Restaurant deleted successfully'
+    end
+
+  end
 
 
 end
