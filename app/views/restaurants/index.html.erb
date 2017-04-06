@@ -6,6 +6,7 @@
   <% restaurant.reviews.each do |review| %>
     <%= review.thoughts %>
   <% end %>
+  <h3>Average rating: <%= star_rating(restaurant.average_rating) %></h3>
   <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
   <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
   <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
@@ -14,7 +15,6 @@
 <% else %>
   No restaurants yet
 <% end %>
-
 <% if user_signed_in? %>
 <a href="/restaurants/new">Add a restaurant</a>
 <% end %>

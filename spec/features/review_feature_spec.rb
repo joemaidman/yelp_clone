@@ -13,4 +13,13 @@ feature 'reviewing' do
      expect(page).to have_content('so so')
   end
 
+  scenario 'displays and average rating for all reviews' do
+    sign_up
+    leave_review('So so', '3')
+    sign_out
+    sign_up(email: "test2@test.com", password: "password")
+    leave_review('Great', '5')
+    expect(page).to have_content("Average rating: ★★★★☆")
+  end
+
 end

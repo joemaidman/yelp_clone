@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :reviewed_restaurants, through: :reviews, source: :restaurant
   has_many :reviews
+  has_many :restaurants
 
 
   def self.from_omniauth(auth)
